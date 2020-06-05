@@ -1,6 +1,6 @@
 /* 
 * https://programmers.co.kr/learn/courses/30/lessons/12937
-* 문자열 다루기 기본
+* 짝수와 홀수
 */
 
 function solution(num) {
