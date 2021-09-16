@@ -1,51 +1,13 @@
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-const input = fs.readFileSync(filePath).toString().split('\n');
+let input = fs.readFileSync(filePath).toString()
 
-let [number] = input;
-let splitNum = number.split('');
-if (splitNum.length < 2) {
-    splitNum.unshift('0');
+let num = Number(input);
+let count = 0;
+while (true) {
+  let sum = Math.floor(input / 10) + input % 10;
+  input = (input % 10) * 10 + (sum % 10)
+  count++;
+  if (num === input) break
 }
-
-console.log(splitNum)
-
-let cycle = 0;
-let result = [];
-while (cycle <= 3 - 1) { // 0부터 시작하므로 0 <= N <= 99
-    console.log("result = ", result, "splitNum = ", splitNum)
-    let sum = (Number(splitNum[0]) + Number(splitNum[1]))
-    console.log(sum.toString().split());
-
-    let sumVal = sum.toString().split();
-    console.log('sumVal = ', sumVal)
-
-    if (sumVal.length < 2) {
-        console.log('한자리수')
-        sumVal.unshift('0');
-    }
-    console.log('sumVal = ', sumVal)
-
-    console.log(splitNum[1] + sumVal[1])
-
-    console.log("before = ", cycle)
-    cycle++
-    console.log("after = ", cycle)
-}
-// while (Number(splitNum) === Number(resultNum)) {
-//     let newNum = Number(splitNum[0]) + Number(splitNum[1])
-//     cycle++
-// }
-// console.log(cycle)
-// let result1 = Number(splitNum[0]) + Number(splitNum[1])
-// let result2 = result1.split('');
-
-// let i = 0;
-// while(i < )
-// let i = 0;
-
-// while(i < testCase.length -1) {
-//     let testNum = testCase[i].split(' ');
-//     console.log(Number(testNum[0]) + Number(testNum[1]));
-//     i++;
-// }
+console.log(count)
