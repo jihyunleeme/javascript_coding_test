@@ -6,14 +6,8 @@
 <body>
 <script>
     function solution(a, b, c){
-        let answer = solution.arguments[0];
-
-        for (let i = 0; i <= solution.arguments.length; i++) {
-            if (answer >= solution.arguments[i]) {
-                answer = solution.arguments[i]
-            }
-        }
-        return answer;
+        let arr = solution.arguments;
+        return arr;
     }
 
     console.log(solution(2, 5, 1));
