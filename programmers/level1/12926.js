@@ -20,4 +20,20 @@ function solution(s, n) {
         answer += textArr[index];
     }
     return answer;
-}
+
+
+function solution(s, n) {
+    var answer = '';
+    let arr = s.split('')
+    answer = arr.map((element) => {
+        let asciiCode = element.charCodeAt(element)
+        if (asciiCode !== 32) { // 32 space
+            asciiCode = asciiCode + n
+        }
+        
+        if ((91 <= asciiCode && asciiCode <= 96) || asciiCode > 122) {
+            asciiCode = asciiCode - 26
+        }
+        return String.fromCharCode(asciiCode)
+    });
+    return answer.join('')
